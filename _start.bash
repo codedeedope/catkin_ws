@@ -1,9 +1,9 @@
 #!/bin/bash
 
 #Starten mit:
-#sudo ./rospi_launch.bash
+#sudo ./_start.bash
 
 cd /home/rospi/catkin_ws
 source devel/setup.bash
-roslaunch rospi rospi.launch
+catkin_make && roslaunch rospi rospi.launch
 
