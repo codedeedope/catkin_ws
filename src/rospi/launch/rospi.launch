@@ -1,5 +1,5 @@
 <launch>
-  <node name="theRospi" pkg="rospi" type="rospi_node" output="screen" />
+  <node name="gpioServer" pkg="rospi" type="GpioServer" output="screen" />
 </launch>
 
 

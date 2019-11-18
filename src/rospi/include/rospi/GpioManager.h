@@ -7,7 +7,10 @@ class GpioManager
     GpioManager();
     ~GpioManager();
 
-    void writePin(unsigned int pin, bool high);
+    bool writePin(unsigned int pin, bool high);
+    
+    private:
+    bool initialisationFailed;
 };
 
 #endif
