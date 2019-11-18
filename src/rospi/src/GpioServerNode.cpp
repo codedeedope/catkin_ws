@@ -11,7 +11,7 @@ GpioServerNode::GpioServerNode(int argc, char **argv)
 
 void GpioServerNode::start()
 {
-	ros::ServiceServer service = node->advertiseService("writePin", writePin);
+	ros::ServiceServer server = node->advertiseService("writePin", writePin);
 	ROS_INFO("writePin Service aktiviert");
 	ros::spin();
 }

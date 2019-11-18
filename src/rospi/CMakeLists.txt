@@ -140,6 +140,11 @@ add_executable(GpioServer
     src/GpioManager.cpp
 )
 
+add_executable(GpioClient
+    src/GpioClientNodeMain.cpp
+    src/GpioClientNode.cpp
+)
+
 ## Rename C++ executable without prefix
 ## The above recommended prefix causes long target names, the following renames the
 ## target back to the shorter version for ease of user use
@@ -155,6 +160,10 @@ target_link_libraries(GpioServer
   ${catkin_LIBRARIES}
 	"${PIGPIO}"
 	"${PTHREAD}"
+)
+
+target_link_libraries(GpioClient
+  ${catkin_LIBRARIES}
 )
 
 #############

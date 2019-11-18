@@ -1,0 +1,5 @@
+<launch>
+  <node name="gpioClient" pkg="rospi" type="GpioClient" output="screen" />
+</launch>
+
+
