@@ -35,11 +35,35 @@ void GpioClientNode::writePin(rospi::WritePin::Request::_pin_type pin, rospi::Wr
   }
 }
 
-void GpioClientNode::testBlink()
+void GpioClientNode::ledAn()
 {
 	ROS_INFO("LED anschalten:");
 	writePin(3, true);
 	writePin(2, false);
+}
+
+void GpioClientNode::ledAus()
+{
+	ROS_INFO("LED ausschalten:");
+	writePin(3, false);
+	writePin(2, true);
+}
+
+void GpioClientNode::testBlink()
+{
+	ros::Rate loop_rate(2);
+	bool an = false;
+	
+	while (ros::ok())
+	{
+		if (an) ledAus();
+		else ledAn();
+	
+		an = !an;
+	
+		ros::spinOnce();
+		loop_rate.sleep();
+	}
 }
 
 

@@ -12,6 +12,10 @@ class GpioClientNode
 	public:
 	GpioClientNode(int argc, char **argv);
 	void writePin(rospi::WritePin::Request::_pin_type pin, rospi::WritePin::Request::_high_type high);
+
+	//Folgende Abstraktionen gehören in eine weitere Klasse
+	void ledAn();
+	void ledAus();
 	void testBlink();
 	
 	private:
